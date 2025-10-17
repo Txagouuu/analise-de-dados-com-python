@@ -1,152 +1,47 @@
 [
   {
-    "nome": "Tiago Mendonça",
-    "idade": 27,
-    "email": "tiago.mendonca@example.com",
-    "telefone": "+55 11 98765-4321",
-    "endereco": {
-      "rua": "Av. Paulista",
-      "numero": 1000,
-      "cidade": "São Paulo",
-      "estado": "SP",
-      "cep": "01310-000"
-    },
-    "data_cadastro": "2025-09-26",
-    "ativo": true
-  },
-  {
-    "nome": "Mariana Silva",
-    "idade": 32,
-    "email": "mariana.silva@example.com",
-    "telefone": "+55 21 98877-6655",
-    "endereco": {
-      "rua": "Rua das Flores",
-      "numero": 250,
-      "cidade": "Rio de Janeiro",
-      "estado": "RJ",
-      "cep": "20230-001"
-    },
-    "data_cadastro": "2025-08-14",
-    "ativo": false
-  },
-  {
-    "nome": "Carlos Souza",
-    "idade": 41,
-    "email": "carlos.souza@example.com",
-    "telefone": "+55 31 97744-2211",
-    "endereco": {
-      "rua": "Av. Afonso Pena",
-      "numero": 1350,
-      "cidade": "Belo Horizonte",
-      "estado": "MG",
-      "cep": "30130-003"
-    },
-    "data_cadastro": "2025-07-02",
-    "ativo": true
-  },
-  {
-    "nome": "Juliana Rocha",
-    "idade": 29,
-    "email": "juliana.rocha@example.com",
-    "telefone": "+55 85 99877-1122",
-    "endereco": {
-      "rua": "Rua das Palmeiras",
-      "numero": 410,
-      "cidade": "Fortaleza",
-      "estado": "CE",
-      "cep": "60160-240"
-    },
-    "data_cadastro": "2025-05-21",
-    "ativo": true
-  },
-  {
-    "nome": "Fernando Almeida",
-    "idade": 36,
-    "email": "fernando.almeida@example.com",
-    "telefone": "+55 51 99633-4488",
-    "endereco": {
-      "rua": "Rua Andradas",
-      "numero": 760,
-      "cidade": "Porto Alegre",
-      "estado": "RS",
-      "cep": "90020-004"
-    },
-    "data_cadastro": "2025-04-18",
-    "ativo": false
-  },
-  {
-    "nome": "Patrícia Gomes",
-    "idade": 24,
-    "email": "patricia.gomes@example.com",
-    "telefone": "+55 62 98122-3344",
-    "endereco": {
-      "rua": "Rua Goiás",
-      "numero": 530,
-      "cidade": "Goiânia",
-      "estado": "GO",
-      "cep": "74005-010"
-    },
-    "data_cadastro": "2025-03-05",
-    "ativo": true
-  },
-  {
-    "nome": "André Oliveira",
-    "idade": 39,
-    "email": "andre.oliveira@example.com",
-    "telefone": "+55 71 99788-9900",
-    "endereco": {
-      "rua": "Av. Sete de Setembro",
-      "numero": 250,
-      "cidade": "Salvador",
-      "estado": "BA",
-      "cep": "40060-001"
-    },
-    "data_cadastro": "2025-02-11",
-    "ativo": false
-  },
-  {
-    "nome": "Beatriz Castro",
-    "idade": 31,
-    "email": "beatriz.castro@example.com",
-    "telefone": "+55 98 98111-2233",
-    "endereco": {
-      "rua": "Rua dos Lírios",
-      "numero": 890,
-      "cidade": "São Luís",
-      "estado": "MA",
-      "cep": "65020-001"
-    },
-    "data_cadastro": "2025-01-30",
-    "ativo": true
-  },
-  {
-    "nome": "Lucas Fernandes",
+    "id": 1,
+    "nome": "Ana Clara",
+    "email": "ana.clara@example.com",
     "idade": 28,
-    "email": "lucas.fernandes@example.com",
-    "telefone": "+55 19 99555-6677",
-    "endereco": {
-      "rua": "Rua Barão Geraldo",
-      "numero": 120,
-      "cidade": "Campinas",
-      "estado": "SP",
-      "cep": "13083-970"
-    },
-    "data_cadastro": "2024-12-22",
-    "ativo": true
+    "cidade": "São Paulo",
+    "ativo": true,
+    "cpf": "111.222.333-44"
   },
   {
-    "nome": "Renata Dias",
+    "id": 2,
+    "nome": "Bruno Costa",
+    "email": "bruno.costa@example.com",
     "idade": 34,
-    "email": "renata.dias@example.com",
-    "telefone": "+55 27 98877-3344",
-    "endereco": {
-      "rua": "Av. Beira Mar",
-      "numero": 200,
-      "cidade": "Vitória",
-      "estado": "ES",
-      "cep": "29010-012"
-    },
-    "data_cadastro": "2024-11-15",
-    "ativo": false
+    "cidade": "Rio de Janeiro",
+    "ativo": false,
+    "cpf": "222.333.444-55"
+  },
+  {
+    "id": 3,
+    "nome": "Carlos Drummond",
+    "email": "carlos.d@example.com",
+    "idade": 45,
+    "cidade": "Belo Horizonte",
+    "ativo": true,
+    "cpf": "333.444.555-66"
+  },
+  {
+    "id": 4,
+    "nome": "Daniela Fernandes",
+    "email": "daniela.f@example.com",
+    "idade": 22,
+    "cidade": "Salvador",
+    "ativo": true,
+    "cpf": "444.555.666-77"
+  },
+  {
+    "id": 5,
+    "nome": "Eduardo Martins",
+    "email": null,
+    "idade": 30,
+    "cidade": "Curitiba",
+    "ativo": false,
+    "cpf": "555.666.777-88"
   }
 ]

@@ -3,6 +3,50 @@ from usuario import usuario
 import json
 
 
+def adicionar_usuario():
+    """Adiciona um novo usuário ao banco de dados."""
+    print("Adicionando novo usuário...")
+    while True:
+        try:
+            # Pede todos os dados de uma vez
+            nome = input("Nome: ").strip()
+            if not nome:
+                raise ValueError("O nome não pode ser vazio.")
+
+            idade_str = input("Idade: ").strip()
+            if not idade_str:
+                raise ValueError("A idade não pode ser vazia.")
+            idade = int(idade_str) # Tenta converter para inteiro
+            if idade <= 0:
+                raise ValueError("A idade deve ser um número positivo.")
+
+            email = input("Email: ").strip()
+            if not email:
+                raise ValueError("O email não pode ser vazio.")
+
+            telefone = input("Telefone: ").strip()
+            if not telefone:
+                raise ValueError("O telefone não pode ser vazio.")
+
+            cidade = input("Cidade: ").strip()
+            if not cidade:
+                raise ValueError("A cidade não pode ser vazia.")
+
+            # Se todas as validações passaram, sai do loop
+            break
+
+        except ValueError as e:
+            # Se qualquer validação falhar, imprime o erro e o loop recomeça
+            print(f"Erro de entrada: {e}. Por favor, tente novamente.")
+            print("----------------------------------------------------")
+
+    # Após o loop ser quebrado (dados válidos), cria e salva o usuário
+    usuario.criar_usuario(nome, idade, email, telefone, cidade)
+    usuario.salvar_banco_json()
+    print("\n--- Usuário adicionado com sucesso! ---")
+
+
+
 def carregar_e_listar_usuarios(caminho_arquivo='cadastros.json'):
     """Carrega usuários de um arquivo JSON e os imprime."""
     try:

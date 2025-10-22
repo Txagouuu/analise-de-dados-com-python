@@ -1,18 +1,13 @@
 from usuario import usuario
-from actions import carregar_e_listar_usuarios
+from actions import listar_usuarios
 from actions import adicionar_usuario
+from actions import atualizar_dados_usuario
+from actions import menu
 import json
-
+from time import sleep
 def main():
     """Exibe o menu principal da aplicação."""
-
-    print("\n--- Sistema de Cadastro de Clientes (v2.0) ---")
-    print("1. Adicionar Cliente")
-    print("2. Listar Todos os Clientes")
-    print("3. Atualizar Dados de Cliente")
-    print("4. Desativar/Reativar Cliente")
-    print("5. Sair")
-    print("---------------------------------------------")
+    menu()
 
 
     while True:
@@ -21,11 +16,22 @@ def main():
             
             if escolha == 1:
                 print("Opção 1 selecionada.")
-                adicionar_usuario()
+                adicionar_usuario()#função de adicionar clientes
             
             elif escolha == 2:
                 print("Opção 2 selecionada.")
-                # Chame a função de listar clientes aqui
+                listar_usuarios()# função de listar clientes 
+                sleep(2)
+                menu()
+            elif escolha == 3:
+                print("Opção 3 selecionada.")
+                listar_usuarios()# função de listar clientes
+                id_usuario = int(input("Digite o ID do usuário que deseja atualizar: "))
+                atualizar_dados_usuario(id_usuario)# função de atualizar dados do cliente
+            elif escolha == 4:
+                print("Opção 4 selecionada.")
+            
+            
             elif escolha == 5:
                 print("Saindo do sistema...")
                 break # Encerra o loop e o programa

@@ -1,47 +1,57 @@
 [
   {
     "id": 1,
-    "nome": "Ana Clara",
-    "email": "ana.clara@example.com",
+    "nome": "Ana Clara D",
     "idade": 28,
+    "email": "ana.clara@example.com",
+    "telefone": null,
     "cidade": "São Paulo",
+    "cpf": "111.222.333-44",
     "ativo": true,
-    "cpf": "111.222.333-44"
+    "endereco": null
   },
   {
     "id": 2,
     "nome": "Bruno Costa",
-    "email": "bruno.costa@example.com",
     "idade": 34,
+    "email": "bruno.costa@example.com",
+    "telefone": null,
     "cidade": "Rio de Janeiro",
+    "cpf": "222.333.444-55",
     "ativo": false,
-    "cpf": "222.333.444-55"
+    "endereco": null
   },
   {
     "id": 3,
     "nome": "Carlos Drummond",
-    "email": "carlos.d@example.com",
     "idade": 45,
+    "email": "carlos.d@example.com",
+    "telefone": null,
     "cidade": "Belo Horizonte",
+    "cpf": "333.444.555-66",
     "ativo": true,
-    "cpf": "333.444.555-66"
+    "endereco": null
   },
   {
     "id": 4,
     "nome": "Daniela Fernandes",
-    "email": "daniela.f@example.com",
     "idade": 22,
+    "email": "daniela.f@example.com",
+    "telefone": null,
     "cidade": "Salvador",
+    "cpf": "444.555.666-77",
     "ativo": true,
-    "cpf": "444.555.666-77"
+    "endereco": null
   },
   {
     "id": 5,
-    "nome": "Eduardo Martins",
-    "email": null,
+    "nome": "Eduardo D. Martins",
     "idade": 30,
+    "email": null,
+    "telefone": null,
     "cidade": "Curitiba",
+    "cpf": "555.666.777-88",
     "ativo": false,
-    "cpf": "555.666.777-88"
+    "endereco": null
   }
 ]

@@ -97,7 +97,7 @@ def listar_usuarios(caminho_arquivo='cadastros.json'):
 
         
 
-# ...existing code...
+
 def atualizar_dados_usuario(id_usuario):
     """Atualiza os dados de um usuário existente."""
     # garante banco carregado
@@ -201,11 +201,80 @@ def atualizar_dados_usuario(id_usuario):
         else:
             print("Opção inválida. Tente novamente.")
 
-        # salva após cada alteração (opcional)
+        # salva após cada alteração
         try:
             usuario.salvar_banco_json()
         except Exception as e:
             print(f"Aviso: falha ao salvar alterações: {e}")
+
+def deletar_usuario(id_usuario):
+    """Remove um usuário por ID (pede confirmação) e salva o arquivo.
+    Se id_usuario for None, pede ao usuário até encontrar ou cancelar (Enter)."""
+    # garante banco carregado
+    if not usuario.banco_usuarios:
+        carregar_DB()
+
+    while True:
+        # se id não vier por parâmetro, pede ao usuário
+        if id_usuario == "":
+            print("Operação cancelada.")
+            return
+        # Opção 1: usando .isnumeric() — aceita apenas inteiros positivos (sem sinal)
+        if not id_usuario.isnumeric():
+            print("ID inválido. Informe um número inteiro positivo.")
+            return
+            # repetir pergunta ou continuar o loop
+        else:
+            id_int = int(id_usuario)
+            # prosseguir com a busca/exclusão
+
+        # tenta normalizar id para inteiro quando possível
+        try:
+            id_int = int(id_usuario)
+        except Exception:
+            id_int = None
+
+        found_index = None
+        for idx, u in enumerate(usuario.banco_usuarios):
+            u_id = getattr(u, "id", getattr(u, "_id", None))
+            try:
+                if id_int is not None and int(u_id) == id_int:
+                    found_index = idx
+                    break
+            except Exception:
+                if str(u_id) == str(id_usuario):
+                    found_index = idx
+                    break
+
+        if found_index is None:
+            print(f"Usuário com ID {id_usuario} não encontrado. Tente novamente ou digite Enter para cancelar.")
+            id_usuario = None
+            continue
+
+        # usuário encontrado — mostra dados e pede confirmação
+        u = usuario.banco_usuarios[found_index]
+        print("Usuário encontrado:")
+        print(f" ID: {getattr(u,'id', getattr(u,'_id','N/A'))}")
+        print(f" Nome: {getattr(u,'nome','')}")
+        print(f" Email: {getattr(u,'email','')}")
+        print(f" Ativo: {getattr(u,'ativo', getattr(u,'_ativo', True))}")
+
+        while True:
+            confirmar = input("Confirma exclusão deste usuário? (S/N): ").strip().lower()
+            if confirmar in ("s", "n"):
+                break
+            print("Resposta inválida. Digite 'S' para sim ou 'N' para não.")
+
+        if confirmar == "s":
+            del usuario.banco_usuarios[found_index]
+            try:
+                usuario.salvar_banco_json()
+                print("Usuário excluído com sucesso.")
+            except Exception as e:
+                print(f"Aviso: não foi possível salvar alterações: {e}")
+        else:
+            print("Exclusão cancelada.")
+        return
 
 def menu():
     """Exibe o menu principal da aplicação."""

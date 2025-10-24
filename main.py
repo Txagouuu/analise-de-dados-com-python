@@ -3,8 +3,10 @@ from actions import listar_usuarios
 from actions import adicionar_usuario
 from actions import atualizar_dados_usuario
 from actions import menu
+from actions import deletar_usuario
 import json
 from time import sleep
+
 def main():
     """Exibe o menu principal da aplicação."""
     menu()
@@ -26,11 +28,12 @@ def main():
             elif escolha == 3:
                 print("Opção 3 selecionada.")
                 listar_usuarios()# função de listar clientes
-                id_usuario = int(input("Digite o ID do usuário que deseja atualizar: "))
+                id_usuario = input("Digite o ID do usuário que deseja deletar (ou Enter para cancelar): ").strip()
                 atualizar_dados_usuario(id_usuario)# função de atualizar dados do cliente
             elif escolha == 4:
                 print("Opção 4 selecionada.")
-            
+                id_usuario = int(input("Digite o ID do usuário que deseja deletar: "))
+                deletar_usuario(id_usuario)# função de deletar cliente
             
             elif escolha == 5:
                 print("Saindo do sistema...")

@@ -32,7 +32,7 @@ def main():
                 atualizar_dados_usuario(id_usuario)# função de atualizar dados do cliente
             elif escolha == 4:
                 print("Opção 4 selecionada.")
-                id_usuario = int(input("Digite o ID do usuário que deseja deletar: "))
+                id_usuario = input("Digite o ID do usuário que deseja deletar: ")
                 deletar_usuario(id_usuario)# função de deletar cliente
             
             elif escolha == 5:

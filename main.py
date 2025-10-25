@@ -1,10 +1,10 @@
 from usuario import usuario
-from actions import listar_usuarios
-from actions import adicionar_usuario
-from actions import atualizar_dados_usuario
-from actions import menu
-from actions import deletar_usuario
-from actions import carregar_DB
+from actions.print import listar_usuarios
+from actions.create import adicionar_usuario
+from actions.edit import atualizar_dados_usuario
+from actions.print import menu
+from actions.delete import deletar_usuario
+from actions.load import carregar_DB
 import json
 from time import sleep
 

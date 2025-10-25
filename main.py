@@ -4,45 +4,57 @@ from actions import adicionar_usuario
 from actions import atualizar_dados_usuario
 from actions import menu
 from actions import deletar_usuario
+from actions import carregar_DB
 import json
 from time import sleep
 
 def main():
     """Exibe o menu principal da aplicação."""
-    menu()
-
+    
+    # Carrega o banco de dados UMA VEZ ao iniciar o programa
+    try:
+        total_carregados = carregar_DB()
+        print(f"{total_carregados} usuários carregados do arquivo.")
+    except Exception as e:
+        print(f"Erro ao carregar banco de dados: {e}")
+        print("Iniciando com banco de dados vazio.")
 
     while True:
-        try:
-            escolha = int(input("Escolha uma opção (1-5): "))
-            
-            if escolha == 1:
-                print("Opção 1 selecionada.")
-                adicionar_usuario()#função de adicionar clientes
-            
-            elif escolha == 2:
-                print("Opção 2 selecionada.")
-                listar_usuarios()# função de listar clientes 
-                sleep(2)
-                menu()
-            elif escolha == 3:
-                print("Opção 3 selecionada.")
-                listar_usuarios()# função de listar clientes
-                id_usuario = input("Digite o ID do usuário que deseja deletar (ou Enter para cancelar): ").strip()
-                atualizar_dados_usuario(id_usuario)# função de atualizar dados do cliente
-            elif escolha == 4:
-                print("Opção 4 selecionada.")
-                id_usuario = input("Digite o ID do usuário que deseja deletar: ")
-                deletar_usuario(id_usuario)# função de deletar cliente
-            
-            elif escolha == 5:
-                print("Saindo do sistema...")
-                break # Encerra o loop e o programa
+        menu() # Exibe o menu
+        opcao = input("Escolha uma opção (1-5): ").strip()
+
+        if opcao == '1':
+            print("\n[Opção 1: Adicionar Cliente]")
+            adicionar_usuario()
+            sleep(1.5)
+
+        elif opcao == '2':
+            print("\n[Opção 2: Listar Clientes]")
+            listar_usuarios()
+            input("\nPressione Enter para continuar...") # Pausa
+
+        elif opcao == '3':
+            print("\n[Opção 3: Atualizar Cliente]")
+            id_para_atualizar = input("Digite o ID do usuário que deseja atualizar: ").strip()
+            if id_para_atualizar:
+                atualizar_dados_usuario(id_para_atualizar)
             else:
-                print("Opção ainda não implementada ou inválida.")
-            
-        except ValueError:
-            print("Entrada inválida. Por favor, insira um número entre 1 e 5.")
+                print("ID inválido ou vazio. Operação cancelada.")
+            sleep(1.5)
+
+        elif opcao == '4':
+            print("\n[Opção 4: Deletar Usuário]")
+           
+            deletar_usuario(None)
+            sleep(1.5)
+
+        elif opcao == '5':
+            print("Saindo do sistema. Até logo!")
+            break
+
+        else:
+            print("Opção inválida. Por favor, tente novamente.")
+            sleep(1)
                 
 
 

@@ -11,17 +11,6 @@
     "endereco": null
   },
   {
-    "id": 2,
-    "nome": "Bruno Costa",
-    "idade": 34,
-    "email": "bruno.costa@example.com",
-    "telefone": null,
-    "cidade": "Rio de Janeiro",
-    "cpf": "222.333.444-55",
-    "ativo": false,
-    "endereco": null
-  },
-  {
     "id": 3,
     "nome": "Carlos Drummond",
     "idade": 45,
@@ -52,6 +41,17 @@
     "cidade": "Curitiba",
     "cpf": "555.666.777-88",
     "ativo": false,
+    "endereco": null
+  },
+  {
+    "id": 6,
+    "nome": "teste",
+    "idade": 999,
+    "email": "teste@gmail.com",
+    "telefone": "5599999",
+    "cidade": "teste-city",
+    "cpf": null,
+    "ativo": true,
     "endereco": null
   }
 ]
